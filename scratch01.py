@@ -248,7 +248,6 @@ elif st.session_state["page"] == "Retrofit Info":
     # Define options for each dropdown
     window_frame_options = [
         "Select...",
-        "Aluminum (no thermal break)",
         "Aluminum (w/ thermal break)",
         "Wood",
         "Vinyl",
@@ -368,5 +367,5 @@ elif st.session_state["page"] == "Summary":
         mime="text/csv",
         disabled=not all_filled
     )
-
-    st.write(st.session_state)
+    # can debug here
+    # st.write(st.session_state)
