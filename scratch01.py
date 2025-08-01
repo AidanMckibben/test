@@ -85,12 +85,12 @@ if st.session_state["page"] == "Building Info":
     heating_system_options = [
         "Select...",
         "Electric Baseboards",
-        "Natural gas baseboards"
+        "Natural Gas Baseboards"
     ]
     dhw_system_options = [
         "Select...",
         "Electric",
-        "Natural gas"
+        "Natural Gas"
     ]
     window_to_wall_ratio_options = [
         "Select...",
@@ -151,7 +151,7 @@ elif st.session_state["page"] == "Assembly Info":
         "Select...",
         "Aluminum (no thermal break)",
         "Aluminum (w/ thermal break)",
-        "Wood",
+        "Fiberglass",
         "Vinyl"
     ]
     assembly_window_glazing_options = [
@@ -248,7 +248,7 @@ elif st.session_state["page"] == "Retrofit Info":
     # Define options for each dropdown
     window_frame_options = [
         "Select...",
-        "Aluminum (w/ thermal break)",
+        "Aluminum",
         "Wood",
         "Vinyl",
     ]
@@ -256,7 +256,7 @@ elif st.session_state["page"] == "Retrofit Info":
         "Select...",
         "Double",
         "Triple, typical",
-        "Triple, high perforcane"
+        "Triple, high performance"
     ]
     wall_exterior_insulation_options = [
         "Select...",
@@ -367,5 +367,31 @@ elif st.session_state["page"] == "Summary":
         mime="text/csv",
         disabled=not all_filled
     )
+
+# managing the energy model dataset
+    from building_combinations import generate_building_combinations
+
+    if st.button("Generate Energy Model Dataset"):
+        energy_model_df = generate_building_combinations()
+
+        # taking the list of user inputs and making it a dictionary
+        user_input_dict = dict(summary_data)
+
+        # filter the dictionary of user inputs and select the data from the energy_model_df
+        filtered_df = energy_model_df
+        for col, val in user_input_dict.items():
+            st.write(f"Filtering: {col} == {val}")
+            st.write(f"Possible values: {energy_model_df[col].unique()}")
+            filtered_df = filtered_df[filtered_df[col] == val]
+
+        if not filtered_df.empty:
+            data_set_value = filtered_df.iloc[0]['Data Set']
+            st.write("Resulting Data Set:", data_set_value)
+        else:
+            st.write("No matching data set found.")
+   
+            st.write(user_input_dict)
+            st.write(filtered_df)
+
     # can debug here
     # st.write(st.session_state)

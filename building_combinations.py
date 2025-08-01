@@ -9,33 +9,33 @@ def generate_building_combinations():
         "More than 6 stories": ["Concrete"],
     }
     wwr_options = ["Low (<20%)", "Medium (20%<x<30%)", "High (>30%)"]
-    heating_systems = ["Electric baseboards", "Natural Gas Baseboards"]
+    heating_systems = ["Electric Baseboards", "Natural Gas Baseboards"]
     dhw_systems = ["Electric", "Natural Gas"]
     wall_types = {
         "Concrete": [
-            "Interior stud wall w/ batts (concrete)",
-            "Continuous rigid insulation (concrete)",
-            "Uninsulated (concrete)",
+            "Interior stud wall w/ batt",
+            "Continuous rigid insulation",
+            "Uninsulated",
         ],
         "Wood Frame": [
-            "2x4 studs w/ batt (wood)",
-            "2x6 studs w/ batt (wood)",
+            "2x4 studs w/ batt",
+            "2x6 studs w/ batt",
         ]
     }
     window_door_frames = ["Fiberglass", "Vinyl", "Aluminum (no thermal break)", "Aluminum (w/ thermal break)"]
-    window_door_glass = ["Single glazing", "Double (no low-e)", "Double (low-e)"]
-    glazing_cavity = ["1/4”", "1/8”"]
+    window_door_glass = ["Single Glazing", "Double (no low-e)", "Double (low-e)"]
+    glazing_cavity = ["1/4\"", "1/8\""]
     thermal_bridging = ["Good", "Typical", "Bad"]
     airtightness = ["Good", "Typical", "Bad"]
     retrofit_window_frame = ["Fiberglass", "Vinyl", "Aluminum"]
     retrofit_window_glazing = ["Double", "Triple, typical", "Triple, high performance"]
-    wall_exterior_insulation = ["None", "2”", "4”", "6”", "8”"]
+    wall_exterior_insulation = ["None", "2\"", "4\"", "6\"", "8\""]
     roofs_retrofit = ["None", "Improved"]
 
     header = [
-        "Building Type", "Building Structure", "WWR", "Heating System", "DHW System", "Walls",
-        "Window/Door frame", "Window/Door Glass", "Glazing Cavity", "Thermal Bridging", "Airtightness",
-        "Retrofit window frame", "Retrofit window glazing", "Wall Exterior Insulation", "Roofs retrofit", "Data Set"
+        "Building Type", "Building Structure", "Window-to-Wall-Ratio", "Heating System", "DHW System", "Walls",
+        "Window / Door Frame", "Window Glazing", "Glazing Cavity", "Thermal Bridging", "Airtightness",
+        "Retrofit Window Frame", "Retrofit Window Glazing", "Wall Exterior Insulation", "Roof Upgrade", "Data Set"
     ]
 
     rows = []
