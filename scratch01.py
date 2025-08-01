@@ -68,8 +68,8 @@ if st.session_state["page"] == "Building Info":
     building_type_options = [
         "Select...",
         "Townhouses",
-        "up to 6 stories  (low-mid rise)",
-        "more than 6 stories"
+        "Up to 6 stories",
+        "More than 6 stories"
     ]
     building_structure_options = [
         "Select...",
@@ -95,7 +95,7 @@ if st.session_state["page"] == "Building Info":
     window_to_wall_ratio_options = [
         "Select...",
         "Low (<20%)",
-        "Meduym (20%<x<30%)",
+        "Medium (20%<x<30%)",
         "High (>30%)"
     ]
 
@@ -249,7 +249,7 @@ elif st.session_state["page"] == "Retrofit Info":
     window_frame_options = [
         "Select...",
         "Aluminum",
-        "Wood",
+        "Fiberglass",
         "Vinyl",
     ]
     window_glazing_options = [
@@ -392,6 +392,5 @@ elif st.session_state["page"] == "Summary":
    
             st.write(user_input_dict)
             st.write(filtered_df)
-
     # can debug here
     # st.write(st.session_state)

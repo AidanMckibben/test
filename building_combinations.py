@@ -48,7 +48,7 @@ def generate_building_combinations():
                     for frame in window_door_frames:
                         for glass in window_door_glass:
                             # Handle Glazing Cavity logic
-                            if glass == "Single glazing":
+                            if glass == "Single Glazing":
                                 glazing_cavity_list = ["n/a"]
                             else:
                                 glazing_cavity_list = glazing_cavity
