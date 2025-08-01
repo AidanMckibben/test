@@ -23,7 +23,7 @@ if st.session_state["page"] == "Home":
         st.image("static/RDH logo.jpg", width=200)
     with col_title:
         st.title("Deep Energy Retrofit Window Replacement Tool")
-    st.write("Use the buttons below or the sidebar to navigate the tool. Once the Building Info, Assembly Info, and Retrofit Info has been filled in, the project can be run through the appropriate calibrated energy model to estimate the energy savings.")
+    st.write("Use the buttons below or the sidebar to navigate the tool. Once the Building Info, Assembly Info, and Retrofit Info has been filled in, data can be pulled from the appropriate energy model run to estimate the energy savings.")
 
     col1, col2, col3 = st.columns(3, gap="large")
     with col1:
@@ -371,7 +371,7 @@ elif st.session_state["page"] == "Summary":
 # managing the energy model dataset
     from building_combinations import generate_building_combinations
 
-    if st.button("Generate Energy Model Dataset"):
+    if st.button(label="Calculate Energy Savings", disabled=not all_filled):
         energy_model_df = generate_building_combinations()
 
         # taking the list of user inputs and making it a dictionary
